@@ -1,25 +1,230 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AfriTalent — Accueil</title>
-<!-- Bootstrap 5 via CDN : feuille de style -->
-<link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-rel="stylesheet">
-<!-- Votre feuille de style personnelle -->
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriTalent — Tarifs & Plans</title>
+    <!-- Bootstrap 5 via CDN : feuille de style -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Votre feuille de style personnelle -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<!-- Le contenu de la page sera ajoute ici -->
-<!-- Bootstrap 5 via CDN : script JavaScript -->
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-></script>
-<!-- Votre script JavaScript -->
-<script src="js/main.js"></script>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AfriTalent</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <main>
+    
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge bg-primary mb-2">Nos plans</span>
+                    <h1 class="display-4 fw-bold">Choisissez le plan idéal</h1>
+                    <p class="lead text-muted">Des solutions adaptées à tous vos besoins</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+              
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <h3 class="card-title fw-bold">Gratuit</h3>
+                                <div class="my-4">
+                                    <span class="display-1 fw-bold text-primary">$0</span>
+                                    <span class="text-muted">/mois</span>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Accès à 5 freelances</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 1 projet actif</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Support par email</li>
+                                    <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Paiement sécurisé</li>
+                                    <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Certification des talents</li>
+                                    <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Support prioritaire</li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-primary w-100">Commencer gratuitement</a>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-lg border-primary">
+                            <div class="card-body text-center p-4">
+                                <div class="position-relative">
+                                    <span class="position-absolute top-0 start-50 translate-middle badge bg-primary px-3 py-2">
+                                        <i class="fas fa-star"></i> Populaire
+                                    </span>
+                                </div>
+                                <h3 class="card-title fw-bold mt-3">Pro</h3>
+                                <div class="my-4">
+                                    <span class="display-1 fw-bold text-primary">$29</span>
+                                    <span class="text-muted">/mois</span>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Accès illimité aux freelances</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 10 projets actifs</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Support prioritaire 24/7</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Paiement sécurisé</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certification des talents</li>
+                                    <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i> Account manager dédié</li>
+                                </ul>
+                                <a href="#" class="btn btn-primary w-100">Choisir Pro</a>
+                            </div>
+                        </div>
+                    </div>
+
+               
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <h3 class="card-title fw-bold">Entreprise</h3>
+                                <div class="my-4">
+                                    <span class="display-1 fw-bold text-primary">$99</span>
+                                    <span class="text-muted">/mois</span>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Accès illimité aux freelances</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Projets illimités</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Support dédié 24/7</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Paiement sécurisé</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certification des talents</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Account manager dédié</li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-primary w-100">Contacter les ventes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+                <div class="mt-5 pt-5">
+                    <div class="text-center mb-5">
+                        <span class="badge bg-primary mb-2">Questions fréquentes</span>
+                        <h2 class="display-5 fw-bold">Foire aux questions</h2>
+                        <p class="lead text-muted">Tout ce que vous devez savoir sur notre plateforme</p>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="accordion" id="faqAccordion">
+                                <!-- Question 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                            <i class="fas fa-question-circle me-2"></i> Comment fonctionne la mise en relation avec les freelances ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Notre plateforme utilise un algorithme intelligent qui vous propose les freelances les plus adaptés à votre projet. Vous pouvez parcourir leurs profils, consulter leurs portfolios et les contacter directement.
+                                        </div>
+                                    </div>
+                                </div>
+
+                         
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                            <i class="fas fa-lock me-2"></i> Comment sont sécurisés les paiements ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Les paiements sont entièrement sécurisés via notre système de séquestre. Les fonds sont bloqués jusqu'à votre validation finale du travail. Vous ne libérez le paiement que lorsque vous êtes entièrement satisfait.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                            <i class="fas fa-certificate me-2"></i> Comment vérifiez-vous la qualité des freelances ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Chaque freelance passe par un processus de vérification rigoureux : entretien technique, vérification des diplômes et expériences, test des compétences pratiques. Seuls les meilleurs talents sont acceptés.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                            <i class="fas fa-headset me-2"></i> Quel est le délai de réponse du support client ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Notre support client est disponible 24h/24 et 7j/7. Pour les plans Pro et Entreprise, nous garantissons une réponse sous 2 heures ouvrées.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question 5 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                            <i class="fas fa-arrows-spin me-2"></i> Puis-je changer de plan à tout moment ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Oui, absolument ! Vous pouvez passer d'un plan à un autre à tout moment. Aucun frais de résiliation n'est appliqué. Le nouveau tarif s'applique à la prochaine période de facturation.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question 6 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                                            <i class="fas fa-file-contract me-2"></i> Qui possède les droits sur le travail réalisé ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Vous êtes l'unique propriétaire de tous les droits sur le travail réalisé par les freelances via notre plateforme. Nos conditions générales garantissent un transfert complet des droits.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 AfriTalent. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 via CDN : script JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Votre script JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
