@@ -436,7 +436,7 @@ button {
     }
 }
 
-/
+
 /*les cartes */
 .card {
     background: var(--color-bg-white);
@@ -533,7 +533,7 @@ button {
    
 }
 
-/* Style des cartes */
+/* les cartes */
 .bento-card {
     background: var(--color-bg-light);
     border-radius: var(--radius-2xl);
@@ -803,3 +803,6 @@ button {
         bottom: -40px;
     }
 }
+
+
+
