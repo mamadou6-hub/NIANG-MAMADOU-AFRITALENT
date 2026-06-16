@@ -805,8 +805,6 @@ button {
 }
 
 
-
-
 [data-theme="dark"] {
     --color-bg-light: #1a1a2e;
     --color-bg-white: #16213e;
@@ -904,7 +902,7 @@ button {
     backdrop-filter: blur(10px);
 }
 
-/* Effet shrink sur le logo */
+/* Effet sur le logo */
 .navbar-haut {
     transition: all var(--transition-normal);
     font-size: var(--font-size-xl);
@@ -1006,5 +1004,96 @@ button {
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+}
+
+/*mon animation */
+
+/* Classe de base pour les animations */
+.animation,
+.animation-1,
+.animation-2,
+.animation-3,
+.animation-4 {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* États visibles */
+.animation.visible,
+.animation-1.visible,
+.animation-2.visible,
+.animation-3.visible,
+.animation-4.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Délais personnalisés */
+.animation-1 { transition-delay: 0.1s; }
+.animation-2 { transition-delay: 0.2s; }
+.animation-3 { transition-delay: 0.3s; }
+.animation-4 { transition-delay: 0.4s; }
+
+/* 
+   COMMIT 7: COMPTEURS ANIMÉS
+   */
+
+.stat-counter-wrapper {
+    display: inline-block;
+}
+
+.stat-counter {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a3a5c;
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-plus {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a3a5c;
+}
+
+.stat-label {
+    display: block;
+    font-size: 1rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+.stat-item {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-counter {
+        font-size: 2.5rem;
+    }
+    .stat-plus {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-counter {
+        font-size: 2rem;
+    }
+    .stat-plus {
+        font-size: 1.5rem;
     }
 }

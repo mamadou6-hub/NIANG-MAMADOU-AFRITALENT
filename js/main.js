@@ -147,3 +147,80 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     updateThemeIcon(currentTheme);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    
+    const animElements = document.querySelectorAll('.animation, .animation-1, .animation-2, .animation-3, .animation-4');
+
+    if (animElements.length > 0) {
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Unobserve after animation for performance
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        animElements.forEach(el => fadeObserver.observe(el));
+    }
+
+    // ============================================================
+    // 2. ANIMATED COUNTERS
+    // ============================================================
+    const counters = document.querySelectorAll('.stat-counter');
+
+    if (counters.length > 0) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    
+                  
+                    if (target.dataset.animated === 'true') return;
+                    target.dataset.animated = 'true';
+
+                    
+                    const targetValue = parseInt(target.getAttribute('data-target'), 10);
+                    const duration = parseInt(target.getAttribute('data-duration')) || 2000;
+                    const startTime = performance.now();
+
+                    
+                    function animateCounter(currentTime) {
+                        const elapsedTime = currentTime - startTime;
+                        const progress = Math.min(elapsedTime / duration, 1);
+
+                        const easedProgress = 1 - Math.pow(1 - progress, 3);
+                        const currentValue = Math.round(easedProgress * targetValue);
+
+                        target.textContent = currentValue;
+
+                        // Continue l'animation
+                        if (progress < 1) {
+                            requestAnimationFrame(animateCounter);
+                        } else {
+                            // final compteur
+                            target.textContent = targetValue;
+                        }
+                    }
+
+                    // debuter l'animation
+                    requestAnimationFrame(animateCounter);
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+    }
+
+});
