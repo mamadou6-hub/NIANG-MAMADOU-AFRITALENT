@@ -1,205 +1,211 @@
-
+/* Import des polices Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Strichpunkt+Sans:wght@400..900&display=swap');
 
+/* Import des polices Google Fonts (doublon - à supprimer) */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Strichpunkt+Sans:wght@400..900&display=swap');
 
+/* Définition des variables CSS pour le thème clair */
 :root {
-   
-    --color-primary: #E76F51;       
-    --color-primary-dark: #C85A3F;   
-    --color-secondary: #2A9D8F;      
-    --color-accent: #F4A261;        
-    --color-dark: #264653;         
+    /* Couleurs principales de la marque */
+    --color-primary: #E76F51;       /* Orange/rouge principal utilisé pour les boutons et accents */
+    --color-primary-dark: #C85A3F;   /* Version plus foncée du primary pour les survols */
+    --color-secondary: #2A9D8F;      /* Vert turquoise pour les éléments secondaires */
+    --color-accent: #F4A261;         /* Orange clair pour les accents et mises en avant */
+    --color-dark: #264653;           /* Bleu foncé pour les textes et fonds sombres */
     
-   
-    --color-bg-light: #FDF8F5;     
-    --color-bg-white: #FFFFFF;
-    --color-text-primary: #2C3E50; 
-    --color-text-secondary: #6C757D; 
-    --color-text-muted: #8B9A9F;
-    --color-border: #E9ECEF;
+    /* Couleurs de fond et textes */
+    --color-bg-light: #FDF8F5;       /* Fond clair chaleureux avec une teinte crème */
+    --color-bg-white: #FFFFFF;       /* Fond blanc pur pour les cartes et sections */
+    --color-text-primary: #2C3E50;   /* Couleur principale du texte (gris foncé) */
+    --color-text-secondary: #6C757D; /* Couleur secondaire du texte (gris moyen) */
+    --color-text-muted: #8B9A9F;     /* Texte atténué pour les informations secondaires */
+    --color-border: #E9ECEF;         /* Couleur des bordures et séparateurs */
     
+    /* Polices de caractères */
+    --font-primary: 'Inter', sans-serif;        /* Police principale pour le corps de texte */
+    --font-heading: 'Playfair Display', serif;   /* Police pour les titres (style élégant) */
     
-    --font-primary: 'Inter', sans-serif;        
-    --font-heading: 'Playfair Display', serif;   
+    /* Espacements (système de spacing cohérent) */
+    --spacing-xs: 0.25rem;   /* Très petit espacement (4px) */
+    --spacing-sm: 0.5rem;    /* Petit espacement (8px) */
+    --spacing-md: 1rem;      /* Espacement moyen (16px) */
+    --spacing-lg: 1.5rem;    /* Grand espacement (24px) */
+    --spacing-xl: 2rem;      /* Très grand espacement (32px) */
+    --spacing-2xl: 3rem;     /* Double XL (48px) */
+    --spacing-3xl: 4rem;     /* Triple XL (64px) */
     
-
-    --spacing-xs: 0.25rem;   
-    --spacing-sm: 0.5rem; 
-    --spacing-md: 1rem;      
-    --spacing-lg: 1.5rem;    
-    --spacing-xl: 2rem;     
-    --spacing-2xl: 3rem;   
-    --spacing-3xl: 4rem;     
+    /* Tailles de police (échelle typographique) */
+    --font-size-xs: 0.75rem;    /* Extra small (12px) */
+    --font-size-sm: 0.875rem;   /* Small (14px) */
+    --font-size-base: 1rem;     /* Base (16px) */
+    --font-size-md: 1.125rem;   /* Medium (18px) */
+    --font-size-lg: 1.25rem;    /* Large (20px) */
+    --font-size-xl: 1.5rem;     /* Extra large (24px) */
+    --font-size-2xl: 1.875rem;  /* 2X large (30px) */
+    --font-size-3xl: 2.25rem;   /* 3X large (36px) */
+    --font-size-4xl: 3rem;      /* 4X large (48px) */
     
-   
-    --font-size-xs: 0.75rem;    
-    --font-size-sm: 0.875rem;  
-    --font-size-base: 1rem;     
-    --font-size-md: 1.125rem;  
-    --font-size-lg: 1.25rem;    
-    --font-size-xl: 1.5rem;    
-    --font-size-2xl: 1.875rem;  
-    --font-size-3xl: 2.25rem;  
-    --font-size-4xl: 3rem;     
+    /* Hauteurs de ligne pour la lisibilité */
+    --line-height-tight: 1.2;     /* Serré pour les titres */
+    --line-height-normal: 1.5;    /* Normal pour le corps de texte */
+    --line-height-relaxed: 1.75;  /* Détendu pour une meilleure lisibilité */
     
-   
-    --line-height-tight: 1.2;
-    --line-height-normal: 1.5;
-    --line-height-relaxed: 1.75;
+    /* Ombres portées (système d'élevation) */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);   /* Ombre très légère */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Ombre moyenne pour les cartes */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Ombre forte pour les éléments en surbrillance */
     
-    /* Ombres */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    /* Durées de transition pour les animations */
+    --transition-fast: 150ms ease;     /* Rapide pour les micro-interactions */
+    --transition-normal: 250ms ease;   /* Normal pour les transitions standards */
+    --transition-slow: 350ms ease;     /* Lent pour les animations plus marquées */
     
-    /* Transitions */
-    --transition-fast: 150ms ease;
-    --transition-normal: 250ms ease;
-    --transition-slow: 350ms ease;
-    
-    /* Border radius */
-    --radius-sm: 0.25rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --radius-xl: 1rem;
+    /* Bordures arrondies */
+    --radius-sm: 0.25rem;   /* Petit arrondi (4px) */
+    --radius-md: 0.5rem;    /* Arrondi moyen (8px) */
+    --radius-lg: 0.75rem;   /* Grand arrondi (12px) */
+    --radius-xl: 1rem;      /* Extra large arrondi (16px) */
 }
 
-
-
+/* Reset CSS - Réinitialisation des marges et paddings */
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Inclut les bordures et paddings dans la largeur totale */
 }
 
-
+/* Styles de base du body */
 body {
-    font-family:  "Roboto", sans-serif;
-    background-color: var(--color-bg-light);
-    color: var(--color-text-primary);
-    line-height: var(--line-height-normal);
-    font-size: var(--font-size-base);
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: "Roboto", sans-serif; /* Police par défaut */
+    background-color: var(--color-bg-light); /* Fond clair chaleureux */
+    color: var(--color-text-primary); /* Couleur du texte principal */
+    line-height: var(--line-height-normal); /* Hauteur de ligne normale pour la lisibilité */
+    font-size: var(--font-size-base); /* Taille de police de base (16px) */
+    font-weight: 400; /* Poids normal (regular) */
+    -webkit-font-smoothing: antialiased; /* Lissage des polices sur navigateurs WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Lissage des polices sur Firefox Mac */
 }
 
-
+/* Styles des titres (h1 à h6) */
 h1, h2, h3, h4, h5, h6 {
-    font-family:  "Roboto", sans-serif;
-    font-weight: 700;
-    line-height: var(--line-height-tight);
-    color: var(--color-dark);
-    margin-bottom: var(--spacing-md);
+    font-family: "Roboto", sans-serif; /* Police pour les titres */
+    font-weight: 700; /* Gras */
+    line-height: var(--line-height-tight); /* Hauteur de ligne serrée pour les titres */
+    color: var(--color-dark); /* Couleur foncée */
+    margin-bottom: var(--spacing-md); /* Marge inférieure de 16px */
 }
 
+/* Tailles spécifiques des titres */
 h1 {
-    font-size: var(--font-size-4xl);
-    font-weight: 800;
+    font-size: var(--font-size-4xl); /* 48px - Très grand */
+    font-weight: 800; /* Extra gras */
 }
 
 h2 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-3xl); /* 36px - Grand */
     font-weight: 700;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg); /* 24px de marge inférieure */
 }
 
 h3 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-xl); /* 24px - Moyen grand */
     font-weight: 600;
-    color: black;
 }
 
+/* Styles des paragraphes */
 p {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md); /* 16px de marge inférieure */
+    color: var(--color-text-secondary); /* Couleur secondaire du texte */
 }
 
+/* Styles des liens */
 a {
-    text-decoration: none;
-    color: var(--color-primary);
-    transition: color var(--transition-fast);
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    color: var(--color-primary); /* Couleur principale de la marque */
+    transition: color var(--transition-fast); /* Animation rapide au survol */
 }
 
 a:hover {
-    color: rgb(65, 14, 14);
+    color: rgb(65, 14, 14); /* Couleur au survol (rouge foncé) */
 }
 
+/* Supprime les puces et paddings des listes */
 ul, ol {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+/* Images responsives */
 img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* Ne dépasse jamais la largeur du conteneur */
+    height: auto; /* Maintient les proportions */
 }
 
-
+/* Tous les boutons */
 button {
-    font-family: var(--font-primary);
-    cursor: pointer;
+    font-family: var(--font-primary); /* Police personnalisée */
+    cursor: pointer; /* Curseur main pour indiquer l'interactivité */
 }
 
-
+/* Barre de navigation */
 .navbar {
-    background: var(--color-bg-white);
-    padding: var(--spacing-md) 0;
-    box-shadow: var(--shadow-sm);
-    border-bottom: 1px solid var(--color-border);
-    position: sticky;
+    background: var(--color-bg-white); /* Fond blanc */
+    padding: var(--spacing-md) 0; /* 16px de padding vertical */
+    box-shadow: var(--shadow-sm); /* Ombre légère */
+    border-bottom: 1px solid var(--color-border); /* Bordure inférieure grise */
+    position: sticky; /* Reste en haut lors du scroll */
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Au-dessus des autres éléments */
 }
 
-
+/* Logo de la marque dans la navbar */
 .navbar-haut {
-    font-family:  "Roboto", sans-serif;
-    font-size: var(--font-size-xl);
-    font-weight: 800;
-    color: rgb(102, 9, 9);
+    font-family: "Roboto", sans-serif;
+    font-size: var(--font-size-xl); /* 24px */
+    font-weight: 800; /* Extra gras */
+    color: rgb(102, 9, 9); /* Rouge foncé */
     text-decoration: none;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.5px; /* Espacement des lettres réduit */
     transition: color var(--transition-fast);
     display: inline-block;
-    
 }
 
 .navbar-haut:hover {
-    color: var(--color-primary-dark);
+    color: var(--color-primary-dark); /* Change la couleur au survol */
 }
 
-
+/* Liste des liens de navigation */
 .navbar-nav {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-md); /* 16px d'espace entre les liens */
 }
 
+/* Chaque lien de navigation */
 .nav-link {
     font-family: var(--font-primary);
-    font-weight: 500;
-    font-size: var(--font-size-sm);
+    font-weight: 500; /* Semi-gras */
+    font-size: var(--font-size-sm); /* 14px */
     color: var(--color-text-primary);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md); /* 8px 16px */
     transition: all var(--transition-fast);
-    position: relative;
+    position: relative; /* Pour le soulignement personnalisé */
 }
 
 .nav-link:hover {
-    color: var(--color-primary);
+    color: var(--color-primary); /* Devient orange au survol */
 }
 
-/* Lien actif */
+/* Lien actif (page courante) */
 .nav-link.active {
     color: var(--color-primary);
     font-weight: 600;
 }
 
+/* Soulignement du lien actif */
 .nav-link.active::after {
     content: '';
     position: absolute;
@@ -211,13 +217,14 @@ button {
     border-radius: var(--radius-sm);
 }
 
-
+/* Bouton du menu mobile (hamburger) */
 .navbar-toggler {
     border: none;
     background: transparent;
     padding: var(--spacing-sm);
 }
 
+/* Icône du menu hamburger */
 .navbar-toggle {
     display: block;
     width: 24px;
@@ -227,6 +234,7 @@ button {
     transition: var(--transition-fast);
 }
 
+/* Barres supérieure et inférieure du hamburger */
 .navbar-toggle::before,
 .navbar-toggle::after {
     content: '';
@@ -238,17 +246,17 @@ button {
 }
 
 .navbar-toggle::before {
-    top: -8px;
+    top: -8px; /* Positionne la barre du haut */
 }
 
 .navbar-toggle::after {
-    bottom: -8px;
+    bottom: -8px; /* Positionne la barre du bas */
 }
 
-
+/* Section Hero - Bannière principale */
 #hero {
     background: linear-gradient(135deg, var(--color-bg-white) 0%, var(--color-bg-light) 100%);
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-3xl) 0; /* 64px de padding vertical */
     text-align: center;
 }
 
@@ -261,26 +269,27 @@ button {
 }
 
 #hero p {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-md); /* 18px */
     color: var(--color-text-secondary);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl); /* 32px */
 }
 
-/* Bouton personnalisé */
+/* Boutons personnalisés */
 .btn {
     display: inline-block;
     font-family: var(--font-primary);
     font-weight: 600;
-    padding: var(--spacing-sm) var(--spacing-xl);
-    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-xl); /* 8px 32px */
+    border-radius: var(--radius-md); /* 8px arrondis */
     transition: all var(--transition-normal);
     text-align: center;
     cursor: pointer;
 }
 
+/* Bouton principal (primary) */
 .btn-primary {
     background: var(--color-primary);
     color: white;
@@ -290,39 +299,40 @@ button {
 .btn-primary:hover {
     background: var(--color-primary-dark);
     border-color: var(--color-primary-dark);
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Lève légèrement au survol */
     box-shadow: var(--shadow-md);
 }
 
-/* Section services */
+/* Section Services */
 #services {
     background: rgb(201, 100, 100);
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-3xl) 0; /* 64px vertical */
 }
 
 #services h2 {
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl); /* 48px */
 }
 
+/* Chaque carte de service */
 #services .personne {
     text-align: center;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-xl); /* 32px */
     transition: all var(--transition-normal);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-lg); /* 12px */
 }
 
 #services .personne:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px); /* Légère élévation */
     box-shadow: var(--shadow-lg);
 }
 
 #services h3 {
     color: var(--color-primary);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm); /* 8px */
 }
 
-/* Section statistiques */
+/* Section Statistiques */
 #statistiques {
     background: linear-gradient(135deg, var(--color-dark) 0%, #1B3A40 100%);
     color: white;
@@ -336,7 +346,7 @@ button {
 }
 
 #statistiques strong {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-3xl); /* 36px */
     font-weight: 800;
     color: var(--color-accent);
     display: block;
@@ -349,7 +359,7 @@ button {
     margin-bottom: 0;
 }
 
-/* Section témoignages */
+/* Section Témoignages */
 #temoignages {
     background: var(--color-bg-light);
     padding: var(--spacing-3xl) 0;
@@ -360,6 +370,7 @@ button {
     margin-bottom: var(--spacing-xl);
 }
 
+/* Bloc de témoignage */
 .affirmation {
     max-width: 800px;
     margin: 0 auto;
@@ -384,12 +395,12 @@ button {
     margin-top: var(--spacing-sm);
 }
 
-/* Footer */
+/* Footer - Pied de page */
 .bas-de-page {
     background: var(--color-dark);
     color: white;
     padding: var(--spacing-xl) 0;
-    margin-top: auto;
+    margin-top: auto; /* Pousse le footer en bas de page */
 }
 
 .bas-de-page p {
@@ -397,18 +408,20 @@ button {
     margin-bottom: 0;
 }
 
-/*responsive */
+/* Responsive - Tablettes et petits écrans (768px et moins) */
 @media (max-width: 768px) {
+    /* Ajustement des variables pour mobile */
     :root {
-        --font-size-3xl: 1.75rem;
-        --font-size-4xl: 2.25rem;
-        --spacing-3xl: 2rem;
+        --font-size-3xl: 1.75rem; /* 28px */
+        --font-size-4xl: 2.25rem; /* 36px */
+        --spacing-3xl: 2rem; /* 32px */
     }
     
     h1 {
         font-size: var(--font-size-3xl);
     }
     
+    /* Navigation en colonne sur mobile */
     .navbar-nav {
         padding-top: var(--spacing-md);
         gap: var(--spacing-sm);
@@ -423,6 +436,7 @@ button {
         right: var(--spacing-sm);
     }
     
+    /* Espacement des colonnes */
     #services .col-md-4 {
         margin-bottom: var(--spacing-lg);
     }
@@ -437,12 +451,11 @@ button {
     }
 }
 
-
-/*les cartes */
+/* Composants génériques - Cartes */
 .card {
     background: var(--color-bg-white);
     border-radius: var(--radius-lg);
-    overflow: hidden;
+    overflow: hidden; /* Cache les débordements des enfants */
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
     border: 1px solid var(--color-border);
@@ -453,7 +466,7 @@ button {
     box-shadow: var(--shadow-lg);
 }
 
-/* Formulaires */
+/* Champs de formulaire */
 .form-control {
     font-family: var(--font-primary);
     padding: var(--spacing-sm) var(--spacing-md);
@@ -465,10 +478,10 @@ button {
 .form-control:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.1);
+    box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.1); /* Effet de focus */
 }
 
-
+/* Classes utilitaires personnalisées */
 .text-primary-custom {
     color: var(--color-primary);
 }
@@ -485,19 +498,19 @@ button {
     box-shadow: var(--shadow-lg);
 }
 
-
-
-
+/* Section "Comment ça marche" avec Bento Grid */
 #comment {
     padding: var(--spacing-3xl) 0;
     background: var(--color-bg-white);
 }
 
+/* En-tête de section */
 .section-header {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
 }
 
+/* Badge d'étiquette */
 .section-badge {
     display: inline-block;
     font-size: var(--font-size-sm);
@@ -524,17 +537,16 @@ button {
     margin: 0 auto;
 }
 
-
+/* Grille Bento - Layout en grille moderne */
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
     grid-auto-rows: auto;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-lg); /* 24px d'espace */
     margin-top: var(--spacing-xl);
-   
 }
 
-/* les cartes */
+/* Cartes Bento */
 .bento-card {
     background: var(--color-bg-light);
     border-radius: var(--radius-2xl);
@@ -589,7 +601,6 @@ button {
     margin-bottom: var(--spacing-md);
 }
 
-/* Titre */
 .bento-card h3 {
     font-size: var(--font-size-lg);
     font-weight: 700;
@@ -597,7 +608,6 @@ button {
     color: var(--color-dark);
 }
 
-/* Description */
 .bento-card p {
     font-size: var(--font-size-sm);
     color: var(--color-text-secondary);
@@ -620,7 +630,7 @@ button {
     background: radial-gradient(circle at top right, rgba(231, 111, 81, 0.05), transparent);
     opacity: 0;
     transition: opacity var(--transition-normal);
-    pointer-events: none;
+    pointer-events: none; /* Laisse les clics passer */
     border-radius: inherit;
 }
 
@@ -628,10 +638,10 @@ button {
     opacity: 1;
 }
 
-/* Responsive Bento Grid */
+/* Responsive Bento Grid - Tablettes */
 @media (max-width: 1024px) {
     .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Passe à 2 colonnes */
         gap: var(--spacing-md);
     }
     
@@ -645,9 +655,10 @@ button {
     }
 }
 
+/* Responsive Bento Grid - Mobiles */
 @media (max-width: 640px) {
     .bento-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Une seule colonne */
     }
     
     .bento-card {
@@ -663,150 +674,9 @@ button {
     }
 }
 
-
-#temoignages {
-    background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-white) 100%);
-    padding: var(--spacing-3xl) 0;
-}
-
-#temoignages h2 {
-    text-align: center;
-    margin-bottom: var(--spacing-2xl);
-    color: var(--color-dark);
-}
-
-/* Carte de témoignage */
-.testimonial-card {
-    background: var(--color-bg-white);
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-2xl);
-    box-shadow: var(--shadow-md);
-    max-width: 700px;
-    margin: 0 auto;
-    transition: transform var(--transition-normal);
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Avatar */
-.testimonial-avatar {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--spacing-md);
-}
-
-.testimonial-avatar i {
-    color: white;
-    font-size: 2rem;
-}
-
-/* Texte du témoignage */
-.testimonial-text {
-    font-size: var(--font-size-md);
-    line-height: var(--line-height-relaxed);
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-md);
-    font-style: italic;
-}
-
-/* Nom */
-.testimonial-name {
-    font-size: var(--font-size-base);
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-xs);
-}
-
-/* Titre */
-.testimonial-title {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-sm);
-}
-
-/* Étoiles de notation */
-.testimonial-rating i {
-    font-size: 0.9rem;
-    margin: 0 1px;
-    color: #FFD700;
-}
-
-/* Styles du carousel Bootstrap */
-.carousel-indicators {
-    bottom: -50px;
-}
-
-.carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--color-border);
-    margin: 0 5px;
-}
-
-.carousel-indicators button.active {
-    background-color: var(--color-primary);
-}
-
-/* Boutons navigation */
-.carousel-control-prev,
-.carousel-control-next {
-    width: 40px;
-    height: 40px;
-    background: var(--color-primary);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.7;
-}
-
-.carousel-control-prev {
-    left: -50px;
-}
-
-.carousel-control-next {
-    right: -50px;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    opacity: 1;
-    background: var(--color-primary-dark);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 20px;
-    height: 20px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .testimonial-card {
-        padding: var(--spacing-lg);
-        margin: 0 var(--spacing-md);
-    }
-    
-    .carousel-control-prev,
-    .carousel-control-next {
-        display: none;
-    }
-    
-    .carousel-indicators {
-        bottom: -40px;
-    }
-}
-
-
+/* Thème sombre (Dark Mode) */
 [data-theme="dark"] {
+    /* Surcharge des couleurs pour le mode sombre */
     --color-bg-light: #1a1a2e;
     --color-bg-white: #16213e;
     --color-text-primary: #e0e0e0;
@@ -820,6 +690,7 @@ button {
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
+/* Application du thème sombre */
 [data-theme="dark"] body {
     background-color: #1a1a2e;
 }
@@ -855,7 +726,7 @@ button {
     color: var(--color-primary);
 }
 
-
+/* Bouton de bascule de thème */
 .theme-toggle-li {
     display: flex;
     align-items: center;
@@ -878,22 +749,22 @@ button {
 }
 
 .theme-toggle-btn:hover {
-    transform: rotate(15deg);
+    transform: rotate(15deg); /* Rotation légère au survol */
     background: var(--color-primary);
     color: white;
     border-color: var(--color-primary);
 }
 
-
+/* Effet de scroll sur la navbar */
 .navbar {
     transition: all var(--transition-normal);
     padding: var(--spacing-md) 0;
 }
 
-/* Navbar après scroll */
+/* Navbar après scroll (réduite) */
 .navbar-scrolled {
     background: var(--color-bg-white);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Effet glassmorphism */
     box-shadow: var(--shadow-lg);
     padding: var(--spacing-sm) 0;
 }
@@ -903,17 +774,18 @@ button {
     backdrop-filter: blur(10px);
 }
 
-/* Effet sur le logo */
+/* Effet sur le logo pendant le scroll */
 .navbar-haut {
     transition: all var(--transition-normal);
     font-size: var(--font-size-xl);
 }
 
+/* Logo réduit après scroll */
 .navbar-haut-shrink {
     font-size: calc(var(--font-size-xl) * 0.85);
 }
 
-/* BOUTON RETOUR EN HAUT*/
+/* Bouton retour en haut (Back to Top) */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -947,6 +819,7 @@ button {
     box-shadow: var(--shadow-lg);
 }
 
+/* Animation de rebond sur l'icône */
 .back-to-top i {
     animation: bounce 2s infinite;
 }
@@ -960,7 +833,7 @@ button {
     }
 }
 
-
+/* Responsive - Menu mobile */
 @media (max-width: 767px) {
     .navbar-collapse {
         display: none;
@@ -1008,21 +881,19 @@ button {
     }
 }
 
-/*mon animation */
-
-/* Classe de base pour les animations */
+/* Animations fade-in (COMMIT 7) */
 .animation,
 .animation-1,
 .animation-2,
 .animation-3,
 .animation-4 {
-    opacity: 0;
-    transform: translateY(40px);
+    opacity: 0; /* Invisible au départ */
+    transform: translateY(40px); /* Décalé vers le bas */
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
                 transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* États visibles */
+/* États visibles - l'élément apparaît */
 .animation.visible,
 .animation-1.visible,
 .animation-2.visible,
@@ -1032,16 +903,13 @@ button {
     transform: translateY(0);
 }
 
-/* Délais personnalisés */
+/* Délais personnalisés pour un effet cascade */
 .animation-1 { transition-delay: 0.1s; }
 .animation-2 { transition-delay: 0.2s; }
 .animation-3 { transition-delay: 0.3s; }
 .animation-4 { transition-delay: 0.4s; }
 
-/* 
-   COMMIT 7: COMPTEURS ANIMÉS
-   */
-
+/* Compteurs animés (COMMIT 7) */
 .stat-counter-wrapper {
     display: inline-block;
 }
@@ -1051,7 +919,7 @@ button {
     font-weight: 700;
     color: #1a3a5c;
     display: inline-block;
-    font-variant-numeric: tabular-nums;
+    font-variant-numeric: tabular-nums; /* Alignement des chiffres */
 }
 
 .stat-plus {
@@ -1080,7 +948,7 @@ button {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Responsive */
+/* Responsive des compteurs */
 @media (max-width: 768px) {
     .stat-counter {
         font-size: 2.5rem;
